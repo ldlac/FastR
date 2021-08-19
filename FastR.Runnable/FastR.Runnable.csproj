@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>ldlac</Authors>
+    <Company>Elixin Software</Company>
+    <Copyright>Elixin Software</Copyright>
+    <PackageProjectUrl>https://github.com/ldlac/FastR</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ldlac/FastR</RepositoryUrl>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
