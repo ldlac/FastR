@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main # Default release branch
+
 jobs:
   publish:
     name: build, pack & publish
@@ -48,6 +49,18 @@ jobs:
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
           # INCLUDE_SYMBOLS: false
 
+jobs:
+  publish:
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # - name: Setup dotnet
+      #   uses: actions/setup-dotnet@v1
+      #   with:
+      #     dotnet-version: 3.1.200
+      
       # Publish FastR.Runnable
       - name: publish on version change
         id: publish_nuget
