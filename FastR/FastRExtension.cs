@@ -139,6 +139,13 @@
                 return await httpContext.ReadFromJson(parameterInfo.ParameterType);
             }
 
+            var formParameter = parameterInfo.GetCustomAttribute<FormAttribute>();
+
+            if (formParameter is not null && httpContext is not null && httpContext.Request.HasFormContentType)
+            {
+                return httpContext.Request.Form;
+            }
+
             if (parameterInfo.HasDefaultValue) return parameterInfo.DefaultValue;
 
             return null;

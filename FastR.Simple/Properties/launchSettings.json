@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FastR.Simple": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

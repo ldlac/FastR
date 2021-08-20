@@ -1,6 +1,7 @@
 ﻿using FastR.Simple.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace FastR.Simple.Controllers
@@ -30,6 +31,14 @@ namespace FastR.Simple.Controllers
         public static async Task<WeatherForecast[]> PostWeatherForecast([Body] WeatherForecast weatherForecast, [Depends] WeatherForecastService service)
         {
             return await service.Forecast();
+        }
+
+        [Endpoint(EndpointVerb.POST, "files")]
+        public static async Task<int> PostFiles([Form] IFormCollection form)
+        {
+            var file = form?.Files?.FirstOrDefault();
+
+            return 1;
         }
     }
 }

@@ -30,6 +30,11 @@
     {
     }
 
+    [AttributeUsage(AttributeTargets.Parameter)]
+    public sealed class FormAttribute : Attribute
+    {
+    }
+
     public enum EndpointVerb
     {
         GET,
